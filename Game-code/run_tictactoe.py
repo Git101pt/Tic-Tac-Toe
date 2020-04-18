@@ -79,7 +79,7 @@ def display_board(chance_num,player_choice_dict,loc,choice,display_board_str,win
     elif row2_lst[0]==o_str and row2_lst[1]==o_str and row2_lst[2]==o_str:
       print("Wohoo! Winner of the game is: Player-{}".format(player_choice_dict[choice]))
       win_flg=1
-    elif row3_lst[0]==o_str and row3_lst[1]==o_str and row3_lst[3]==o_str:
+    elif row3_lst[0]==o_str and row3_lst[1]==o_str and row3_lst[2]==o_str:
       print("Wohoo! Winner of the game is: Player-{}".format(player_choice_dict[choice]))
       win_flg=1
     elif row1_lst[0]==o_str and row2_lst[0]==o_str and row3_lst[0]==o_str:
@@ -112,13 +112,13 @@ if first_chance==1:
   p1_choice=input("Enter player1 choice:")
   if choice_lst[0]==p1_choice:p2_choice=choice_lst[1]
   else:p2_choice=choice_lst[0]
-  print("Player2 choice will be:{}".format(p2_choice)
+  print("Player2 choice will be:{}".format(p2_choice))
 else:
   print("Player 2 will take first chance")
   p2_choice=input("Enter player2 choice:")
   if choice_lst[0]==p2_choice:p1_choice=choice_lst[1]
   else:p1_choice=choice_lst[0]
-  print("Player1 choice will be:{}".format(p1_choice)
+  print("Player1 choice will be:{}".format(p1_choice))
 if p1_choice=='X':player_choice_dict={'X':1,'O':2}
 else:player_choice_dict={'O':1,'X':2}
 for chance_num in range(1,10):
@@ -141,6 +141,6 @@ for chance_num in range(1,10):
       display_board_str, win_flg=display_board(chance_num,player_choice_dict,board_loc,p1_choice,display_board_str,win_flg)
       print(display_board_str)
   if win_flg==1:break
-  elif win_flg==0 and chance num==9:
+  elif win_flg==0 and chance_num==9:
     print("Game drawn")
   location_list.remove(board_loc)
